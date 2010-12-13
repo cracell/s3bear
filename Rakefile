@@ -15,8 +15,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "s3_bear"
   gem.homepage = "http://github.com/cracell/s3_bear"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{s3_bear helps you upload files right to S3}
+  gem.description = %Q{s3_bear adds a url field to your models and will download remote files for paperclip to use}
   gem.email = "cracell@gmail.com"
   gem.authors = ["Eric Cranston"]
   # Include your dependencies below. Runtime dependencies are required when using your gem,
