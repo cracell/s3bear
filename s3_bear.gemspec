@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{s3_bear}
-  s.version = "0.1.0"
+  s.version = "0.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Eric Cranston"]
-  s.date = %q{2010-12-13}
+  s.date = %q{2010-12-14}
   s.description = %q{s3_bear adds a url field to your models and will download remote files for paperclip to use}
   s.email = %q{cracell@gmail.com}
   s.extra_rdoc_files = [
@@ -24,10 +24,15 @@ Gem::Specification.new do |s|
     "README.rdoc",
     "Rakefile",
     "VERSION",
-    "init.rb",
+    "app/controller/s3_bear_uploads_controller.rb",
+    "config/routes.rb",
+    "lib/config/routes.rb",
+    "lib/railtie.rb",
     "lib/s3_bear.rb",
+    "s3_bear.gemspec",
     "test/helper.rb",
-    "test/test_s3_bear.rb"
+    "test/test_s3_bear.rb",
+    "tim_init.rb"
   ]
   s.homepage = %q{http://github.com/cracell/s3_bear}
   s.licenses = ["MIT"]
