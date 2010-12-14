@@ -1,4 +1,13 @@
+#$LOAD_PATH.push File.expand_path(File.dirname(__FILE__))
+#require 'railtie'
+#require File.join(File.dirname(__FILE__), "prepend_engine_routes")
+require File.join(File.dirname(__FILE__), "railtie")
+
 module S3Bear
+  def self.draw
+    match 's3_bear/upload' => 'uploads#index'
+  end
+  
   def self.included(base)
     base.send :extend, ClassMethods
   end

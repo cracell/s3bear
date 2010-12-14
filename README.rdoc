@@ -1,6 +1,8 @@
 = s3_bear
 
-Description goes here.
+This plugin is an attempt to make a more plug and play version of http://github.com/nathancolgate/s3-swf-upload-plugin
+
+Right now it's very unstable and only being tested against Ruby 1.9.2 and Rails 3.0.3.
 
 == Contributing to s3_bear
  
