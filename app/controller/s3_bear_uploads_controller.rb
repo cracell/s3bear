@@ -6,13 +6,13 @@ class S3BearUploadsController < ActionController::Base
   #        Possibly these should also be configurable from S3Config...
 
   skip_before_filter :verify_authenticity_token
-  include S3SwfUpload::Signature
+  include S3Bear::Signature
   
   def index
-    bucket          = S3SwfUpload::S3Config.bucket
-    access_key_id   = S3SwfUpload::S3Config.access_key_id
-    acl             = S3SwfUpload::S3Config.acl
-    secret_key      = S3SwfUpload::S3Config.secret_access_key
+    bucket          = S3Bear::Config.bucket
+    access_key_id   = S3Bear::Config.access_key_id
+    acl             = S3Bear::Config.acl
+    secret_key      = S3Bear::Config.secret_access_key
     key             = params[:key]
     content_type    = params[:content_type]
     https           = 'false'

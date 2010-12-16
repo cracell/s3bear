@@ -1,4 +1,5 @@
 = s3_bear
+Beware the Bear!
 
 This plugin is an attempt to make a more plug and play version of http://github.com/nathancolgate/s3-swf-upload-plugin
 
