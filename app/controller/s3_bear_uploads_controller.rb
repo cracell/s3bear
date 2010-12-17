@@ -47,6 +47,18 @@ class S3BearUploadsController < ActionController::Base
           :errorMessage    => error_message.to_s
         }.to_xml
       }
+      format.json {
+        render :json => {
+          :policy          => policy,
+          :signature       => signature,
+          :bucket          => bucket,
+          :accesskeyid     => access_key_id,
+          :acl             => acl,
+          :expirationdate  => expiration_date,
+          :https           => https,
+          :errorMessage    => error_message.to_s
+        }
+      }
     end
   end
   
