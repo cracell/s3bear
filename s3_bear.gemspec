@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Eric Cranston"]
-  s.date = %q{2010-12-14}
+  s.date = %q{2010-12-17}
   s.description = %q{s3_bear adds a url field to your models and will download remote files for paperclip to use}
   s.email = %q{cracell@gmail.com}
   s.extra_rdoc_files = [
@@ -19,16 +19,31 @@ Gem::Specification.new do |s|
   s.files = [
     ".document",
     "Gemfile",
-    "Gemfile.lock",
     "LICENSE.txt",
     "README.rdoc",
     "Rakefile",
     "VERSION",
     "app/controller/s3_bear_uploads_controller.rb",
     "config/routes.rb",
-    "lib/config/routes.rb",
+    "flex_src/bin-release/flex-config.xml",
+    "flex_src/compile",
+    "flex_src/src/Globals.as",
+    "flex_src/src/S3Uploader.as",
+    "flex_src/src/com/adobe/net/MimeTypeMap.as",
+    "flex_src/src/com/elctech/S3UploadOptions.as",
+    "flex_src/src/com/elctech/S3UploadRequest.as",
+    "flex_src/src/com/nathancolgate/s3_swf_upload/BrowseButton.as",
+    "flex_src/src/com/nathancolgate/s3_swf_upload/S3Queue.as",
+    "flex_src/src/com/nathancolgate/s3_swf_upload/S3Signature.as",
+    "flex_src/src/com/nathancolgate/s3_swf_upload/S3Upload.as",
     "lib/railtie.rb",
     "lib/s3_bear.rb",
+    "lib/signature.rb",
+    "lib/tasks/s3_bear.rake",
+    "public/javascripts/jquery-1.4.4.min.js",
+    "public/javascripts/jquery.html5_upload.js",
+    "public/javascripts/postmessage.js",
+    "public/upload.html",
     "s3_bear.gemspec",
     "test/helper.rb",
     "test/test_s3_bear.rb",
