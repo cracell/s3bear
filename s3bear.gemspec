@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{s3bear}
-  s.version = "0.2.1"
+  s.version = "0.2.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Eric Cranston"]
@@ -24,8 +24,8 @@ Gem::Specification.new do |s|
     "Rakefile",
     "VERSION",
     "config/routes.rb",
-    "lib/generators/s3bear/install_generator.rb",
-    "lib/generators/s3bear/templates/s3bear.rb",
+    "lib/generators/s3_bear/install_generator.rb",
+    "lib/generators/s3_bear/templates/s3bear.rb",
     "lib/railtie.rb",
     "lib/s3_bear/configuration.rb",
     "lib/s3bear.rb",
