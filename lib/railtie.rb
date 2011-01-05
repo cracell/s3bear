@@ -1,11 +1,17 @@
-require 's3_bear'
+require 's3bear'
 require 'rails'
  
 module S3Bear
   class Engine < Rails::Engine
-    initializer "s3_bear.load_config" do
-      S3Bear::Config.load
-    end
+    config.after_initialize do
+       S3Bear.config #unless Recurly.configured?
+     end
+    # initializer "s3bear.config" do
+    #   #
+    # end
+    # initializer "s3_bear.load_config" do
+    #  # S3Bear::Config.load
+    # end
   end
   # class Railtie < Rails::Railtie
   #   initializer "s3_swf_upload.load_s3_swf_upload_config" do

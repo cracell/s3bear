@@ -1,121 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta charset="utf-8">
-<title>S3Bear HTML5 Sandbox</title>
-<script src="./javascripts/jquery-1.4.4.min.js"></script>
-<script src="./javascripts/jquery.html5_upload.js"></script>
-<script src="./javascripts/postmessage.js"></script>
-<script>
-</script>
-</head><body>
-  <div style="display: block; width: 102px; height: 34px; overflow: hidden;">
-      <a href="javascript: void(0)" style="width: 110px; height: 30px; position: relative; top: -5px; left: -5px;"><img src='http://weddingjojo.s3.amazonaws.com/assets/buttons/upload-btn.png' /></a>
-    <input type="file" id="upload_field" name="upload" style="font-size: 50px; width: 120px; opacity: 0; filter:alpha(opacity: 0);  position: relative; top: -40px; left: -20px" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <title>Should be viewed in Iframe</title>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+  <script src="/assets/s3bear_external.js"></script>
+  <!--  For development
+  <script src="/assets/pagehandling.js"></script>
+  -->
+  <style type="text/css">
+  body {margin: 0;} 
+  img { border: none;}
+  .button-container {
+    display: block; 
+    width: 102px; 
+    height: 34px; 
+    overflow: hidden;
+  }
+  .button-container a {
+    width: 110px; 
+    height: 30px; 
+    position: relative;
+  }
+  
+  #upload_field {
+    font-size: 50px; 
+    width: 110px; 
+    opacity: 0; 
+    filter:alpha(opacity: 0);  
+    position: relative; 
+    top: -40px; 
+    left: -20px;
+  }
+  </style>
+</head>
+  <body>
+  <div class='button-container'>
+    <a><img src='/assets/upload_button.png' /></a>
+    <input type="file" id="upload_field" name="upload" style= />
   </div>
-    <!-- <input type="file" multiple="true" id="upload_field"><br>
-       <input type="button" value="go" onclick="$(&#39;#upload_field&#39;).triggerHandler(&#39;html5_upload.start&#39;);">
-       <div id="progress_report">
-         <div id="progress_report_name"></div>
-         <div id="progress_report_status" style="font-style: italic;"></div>
-         <div id="progress_report_bar_container" style="width: 90%; height: 5px;">
-           <div id="progress_report_bar" style="background-color: blue; width: 0; height: 100%;"></div>
-         </div>
-       </div>
-       <a href="#" id="fileSelect">Select some files</a>   -->
-    <script type="text/javascript">
-      $("#upload_field").html5_upload({
-        autostart:false,
-        method:'PUT',
-        STATUSES:{
-        'STARTED':'Started',
-        'PROGRESS':'Progress',
-        'LOADED':'Loaded',
-        'FINISHED':'Finished'
-        },
-        headers:{
-        'x-amz-acl':'public-read',
-        'Content-Type':function(file){
-          var ext = file.fileName.split(".").pop();
-          switch(ext){
-            case 'htm':
-            case 'html':
-            case 'htmls':
-            return 'text/html';
-            case 'css':
-            return 'text/css';
-            case 'gif':
-            return 'image/gif';
-            case 'jpeg':
-            case 'jpg':
-            return 'image/jpeg';
-            case 'png':
-            return 'image/png';
-            case 'pdf':
-            return 'application/pdf';
-            case 'zip':
-            return 'application/zip';
-            default:
-            return 'application/octet-stream';
-          }
-          return('application/octet-stream');
-        }
-        },
-        genName: function(file, number, total) {
-          return file + "(" + (number+1) + " of " + total + ")";
-        },
-        url: function(number) {
-          return $('#upload_field')[0].files[number].fileName;
-        },
-        sendBoundary: false,
-        setName: function(text) {
-            $("#progress_report_name").text(text);
-        },
-        setStatus: function(text) {
-          $("#progress_report_status").text(text);
-        },
-        setProgress: function(val) {
-          //$("#progress_report_bar").css('width', Math.ceil(val*100)+"%");
-          pm({
-            target: window.parent,
-            type:"s3_bear-progress", 
-            data: Math.ceil(val*100)+"%"
-          });
-          
-          //window.parent.postMessage({progress: Math.ceil(val*100)+"%"}, 'http://localhost:3000');
-          
-        },
-        onFinishOne: function(event, response, name, number, total) {
-          pm({
-            target: window.parent,
-            type:"s3_bear-complete", 
-            data: {filename: name, host: 'http://uploads.weddingjojo.com.s3.amazonaws.com'}
-          });
-          //window.parent.postMessage(name, 'http://localhost:3000');
-          //$('#image-link').attr('href', ('/' + name));
-          
-        }
-      });
-      // 
-      // var fileSelect = document.getElementById("fileSelect"),
-      // //   fileElem = document.getElementById("upload_field");
-      // //      
-      // // fileSelect.addEventListener("click", function (e) {
-      // //   if (fileElem) {
-      // //     fileElem.click();
-      // //   }
-      // //   e.preventDefault(); // prevent navigation to "#"
-      // // }, false);
-      $(window).load(function(){  
-        $('#upload_field').change(function(e){
-          $('#upload_field').triggerHandler('html5_upload.start');
-        });
-       });
-      //   $('#fileSelect').click(function(e){
-      //     $("upload_field").click();
-     
-    //});
-    </script>
-
-</body></html>
+</body>
+</html>

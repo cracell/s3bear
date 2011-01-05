@@ -12,16 +12,17 @@ require 'rake'
 require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
-  gem.name = "s3_bear"
-  gem.homepage = "http://github.com/cracell/s3_bear"
+  gem.name = "s3bear"
+  gem.homepage = "http://github.com/cracell/s3bear"
   gem.license = "MIT"
-  gem.summary = %Q{s3_bear helps you upload files right to S3}
-  gem.description = %Q{s3_bear adds a url field to your models and will download remote files for paperclip to use}
+  gem.summary = %Q{S3Bear helps you upload files right to S3}
+  gem.description = %Q{S3Bear adds a url field to your models and will download remote files for paperclip to use}
   gem.email = "cracell@gmail.com"
   gem.authors = ["Eric Cranston"]
   # Include your dependencies below. Runtime dependencies are required when using your gem,
   # and development dependencies are only needed for development (ie running rake tasks, tests, etc)
-  #  gem.add_runtime_dependency 'jabber4r', '> 0.1'
+  gem.add_runtime_dependency 'aws-s3', '~> 0.6'
+  gem.add_runtime_dependency 'rails', '~> 3.0'
   #  gem.add_development_dependency 'rspec', '> 1.2.3'
 end
 Jeweler::RubygemsDotOrgTasks.new
