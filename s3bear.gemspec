@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{s3bear}
-  s.version = "0.2.0"
+  s.version = "0.2.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Eric Cranston"]
-  s.date = %q{2010-12-30}
+  s.date = %q{2011-01-05}
   s.description = %q{S3Bear adds a url field to your models and will download remote files for paperclip to use}
   s.email = %q{cracell@gmail.com}
   s.extra_rdoc_files = [
@@ -23,26 +23,22 @@ Gem::Specification.new do |s|
     "README.rdoc",
     "Rakefile",
     "VERSION",
-    "app/controller/s3_bear_uploads_controller.rb",
     "config/routes.rb",
-    "flex_src/bin-release/flex-config.xml",
-    "flex_src/compile",
-    "flex_src/src/Globals.as",
-    "flex_src/src/S3Uploader.as",
-    "flex_src/src/com/adobe/net/MimeTypeMap.as",
-    "flex_src/src/com/elctech/S3UploadOptions.as",
-    "flex_src/src/com/elctech/S3UploadRequest.as",
-    "flex_src/src/com/nathancolgate/s3_swf_upload/BrowseButton.as",
-    "flex_src/src/com/nathancolgate/s3_swf_upload/S3Queue.as",
-    "flex_src/src/com/nathancolgate/s3_swf_upload/S3Signature.as",
-    "flex_src/src/com/nathancolgate/s3_swf_upload/S3Upload.as",
+    "lib/generators/s3bear/install_generator.rb",
+    "lib/generators/s3bear/templates/s3bear.rb",
     "lib/railtie.rb",
-    "lib/signature.rb",
-    "lib/tasks/s3_bear.rake",
-    "public/javascripts/jquery-1.4.4.min.js",
-    "public/javascripts/jquery.html5_upload.js",
-    "public/javascripts/postmessage.js",
+    "lib/s3_bear/configuration.rb",
+    "lib/s3bear.rb",
+    "lib/tasks/s3bear.rake",
+    "public/assets/jquery-1.4.4.min.js",
+    "public/assets/jquery.html5_upload.js",
+    "public/assets/pagehandling.js",
+    "public/assets/postmessage.js",
+    "public/assets/s3bear_external.js",
+    "public/assets/upload_button.png",
+    "public/crossdomain.xml",
     "public/upload.html",
+    "s3bear.gemspec",
     "test/helper.rb",
     "test/test_s3_bear.rb"
   ]
@@ -66,12 +62,14 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<jeweler>, ["~> 1.5.1"])
       s.add_development_dependency(%q<rcov>, [">= 0"])
       s.add_runtime_dependency(%q<aws-s3>, ["~> 0.6"])
+      s.add_runtime_dependency(%q<rails>, ["~> 3.0"])
     else
       s.add_dependency(%q<shoulda>, [">= 0"])
       s.add_dependency(%q<bundler>, ["~> 1.0.0"])
       s.add_dependency(%q<jeweler>, ["~> 1.5.1"])
       s.add_dependency(%q<rcov>, [">= 0"])
       s.add_dependency(%q<aws-s3>, ["~> 0.6"])
+      s.add_dependency(%q<rails>, ["~> 3.0"])
     end
   else
     s.add_dependency(%q<shoulda>, [">= 0"])
@@ -79,6 +77,7 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<jeweler>, ["~> 1.5.1"])
     s.add_dependency(%q<rcov>, [">= 0"])
     s.add_dependency(%q<aws-s3>, ["~> 0.6"])
+    s.add_dependency(%q<rails>, ["~> 3.0"])
   end
 end
 
