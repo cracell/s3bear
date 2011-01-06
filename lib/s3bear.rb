@@ -85,7 +85,7 @@ module S3Bear
     end
 
     def do_download_remote_image
-      io = open(URI.parse(self.send(self.class.url_path)))
+      io = open(URI.parse(URI.encode(self.send(self.class.url_path))))
       def io.original_filename; base_uri.path.split('/').last; end
       io.original_filename.blank? ? nil : io
     rescue # catch url errors with validations instead of exceptions (Errno::ENOENT, OpenURI::HTTPError, etc...)

@@ -4,7 +4,7 @@
   - no_label = (no_label rescue nil)
   = f.label :image, 'Upload Picture' unless no_label
   - submit_form = (submit_form rescue '')
-  .upload-container{'data-url-field' => dom_target_id, 'data-s3-bucket' => S3Bear.config.bucket, 'data-submit-form' => submit_form}
+  .upload-container{'data-url-field' => dom_target_id, 'data-s3-bucket' => S3Bear.config.bucket, 'data-submit-form' => submit_form, 'data-upload-image-url' => S3Bear.config.upload_image_url}
     #progress_bar{:style => 'display:none;'}
       #progress_processing
         %span

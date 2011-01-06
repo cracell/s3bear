@@ -7,6 +7,8 @@ module S3Bear
     
     attr_accessor :bucket
     
+    attr_accessor :upload_image_url
+    
     #def initialize
     #end
   end

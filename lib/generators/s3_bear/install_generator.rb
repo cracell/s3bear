@@ -10,8 +10,8 @@ module S3Bear
       end
       
       def copy_javascripts
-        copy_file 's3bear.js', 'public/javascripts/s3bear.js'
-        copy_file 'postmessage.js', 'public/javascripts/postmessage.js'
+        copy_file 's3bear.js', 'public/javascripts/plugins/s3bear.js'
+        copy_file 'postmessage.js', 'public/javascripts/plugins/postmessage.js'
       end
       
       def copy_partial
@@ -19,7 +19,7 @@ module S3Bear
       end
       
       def copy_css
-        copy_file 's3bear.css', 'public/stylesheets/s3bear.css'
+        copy_file 's3bear.css', 'public/stylesheets/plugins/s3bear.css'
       end
     end
   end
