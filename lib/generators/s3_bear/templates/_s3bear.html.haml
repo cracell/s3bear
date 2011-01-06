@@ -1,0 +1,22 @@
+.flash.upload.optional
+  - dom_target_id = '#' + f.object_name + '_' + target.to_s
+  = f.hidden_field target
+  - no_label = (no_label rescue nil)
+  = f.label :image, 'Upload Picture' unless no_label
+  - submit_form = (submit_form rescue '')
+  .upload-container{'data-url-field' => dom_target_id, 'data-s3-bucket' => S3Bear.config.bucket, 'data-submit-form' => submit_form}
+    #progress_bar{:style => 'display:none;'}
+      #progress_processing
+        %span
+          %img{:src => "http://weddingjojo.s3.amazonaws.com/assets/layouts/user/loader.gif"}/
+          Saving!  Please wait ...
+      %span.progress_status
+    #image_successful{:style => 'display:none;'} 
+      - if no_label
+        Upload Complete - Processing
+        = s3_image('various/ajax-loader.gif', :width => "16", :height => "16", :alt => "loading", :class => "ajax-loader")
+      - else
+        %span.filename
+        = link_to 'remove', '#', :class => 'remove'
+      
+      

@@ -1,9 +1,36 @@
-= s3_bear
+= S3 Bear
 Beware the Bear!
 
 This plugin is an attempt to make a more plug and play version of http://github.com/nathancolgate/s3-swf-upload-plugin
 
 Right now it's very unstable and only being tested against Ruby 1.9.2 and Rails 3.0.3.
+
+== Getting Started
+
+S3 Bear builds upon Paperclip's functionality so get it setup first.
+
+Add to your Gemfile and run bundle install
+  gem 's3bear', :git => 'git://github.com/cracell/s3bear.git'
+
+Run: 
+
+  rails generate s3bear:install
+  
+Setup the initializer
+  Do stuff.
+
+Add Stylesheet to your layout
+  = stylesheet_link_tag 's3bear'
+
+Add Jquery and the s3bear scripts to your layout
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+  = javascript_include_tag 's3bear', 'postmessage'
+
+Add bearify. Make sure the tag matches the paperclip field names
+  bearify :attached_image
+  
+Add to your form
+  = render :partial => 'shared/s3_bear', :locals => {:f => f, :target => :attached_image_url}
 
 == Contributing to s3_bear
  

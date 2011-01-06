@@ -1,4 +1,5 @@
-  $(function() {
+//Page Handling.js
+$(function() {
   $("#upload_field").html5_upload({
     autostart:false,
     method:'PUT',
@@ -52,15 +53,15 @@
     setProgress: function(val) {
       pm({
         target: window.parent,
-        type:"s3_bear-progress", 
+        type: "s3bear-progress", 
         data: Math.ceil(val*100)+"%"
       });
     },
     onFinishOne: function(event, response, name, number, total) {
       pm({
         target: window.parent,
-        type:"s3_bear-complete", 
-        data: {filename: name, host: 'http://uploads.weddingjojo.com.s3.amazonaws.com'}
+        type:"s3bear-complete", 
+        data: {filename: name}
       });
       //window.parent.postMessage(name, 'http://localhost:3000');
       //$('#image-link').attr('href', ('/' + name));

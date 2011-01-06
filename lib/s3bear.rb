@@ -2,6 +2,8 @@
 #require 'railtie'
 #require File.join(File.dirname(__FILE__), "prepend_engine_routes")
 require File.join(File.dirname(__FILE__), "railtie")
+require File.join(File.dirname(__FILE__), "view_helpers")
+
 
 module S3Bear
   extend ActiveSupport::Autoload
