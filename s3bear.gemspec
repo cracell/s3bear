@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{s3bear}
-  s.version = "0.2.3"
+  s.version = "0.2.4"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Eric Cranston"]
-  s.date = %q{2011-01-05}
+  s.date = %q{2011-01-10}
   s.description = %q{S3Bear adds a url field to your models and will download remote files for paperclip to use}
   s.email = %q{cracell@gmail.com}
   s.extra_rdoc_files = [
@@ -25,11 +25,16 @@ Gem::Specification.new do |s|
     "VERSION",
     "config/routes.rb",
     "lib/generators/s3_bear/install_generator.rb",
+    "lib/generators/s3_bear/templates/_s3bear.html.haml",
+    "lib/generators/s3_bear/templates/postmessage.js",
+    "lib/generators/s3_bear/templates/s3bear.css",
+    "lib/generators/s3_bear/templates/s3bear.js",
     "lib/generators/s3_bear/templates/s3bear.rb",
     "lib/railtie.rb",
     "lib/s3_bear/configuration.rb",
     "lib/s3bear.rb",
     "lib/tasks/s3bear.rake",
+    "lib/view_helpers.rb",
     "public/assets/jquery-1.4.4.min.js",
     "public/assets/jquery.html5_upload.js",
     "public/assets/pagehandling.js",
