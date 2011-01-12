@@ -32,6 +32,13 @@ Add bearify. Make sure the tag matches the paperclip field names
 Add to your form
   = render :partial => 'shared/s3_bear', :locals => {:f => f, :target => :attached_image_url}
 
+== Limitations
+
+Currently only supports a single uploader per page (though this uploader can be a multiple file uploader)
+Currently only supports S3 buckets with a public-write ACL. Malicious users could upload anything to this bucket and use it to serve files to others.
+Requires Paperclip
+Requires Rails 3
+
 == Contributing to s3_bear
  
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
