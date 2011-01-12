@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{s3bear}
-  s.version = "0.2.5"
+  s.version = "0.2.6"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Eric Cranston"]
-  s.date = %q{2011-01-10}
+  s.date = %q{2011-01-12}
   s.description = %q{S3Bear adds a url field to your models and will download remote files for paperclip to use}
   s.email = %q{cracell@gmail.com}
   s.extra_rdoc_files = [
@@ -40,6 +40,7 @@ Gem::Specification.new do |s|
     "public/assets/pagehandling.js",
     "public/assets/postmessage.js",
     "public/assets/s3bear_external.js",
+    "public/assets/swfupload.swf",
     "public/assets/upload_button.png",
     "public/crossdomain.xml",
     "public/upload.html",
