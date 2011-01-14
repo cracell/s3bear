@@ -9,7 +9,14 @@ module S3Bear
     
     attr_accessor :upload_image_url
     
-    #def initialize
-    #end
+    attr_accessor :loading_image_url
+
+    def loading_image
+      "http://#{self.bucket}.s3.amazonaws.com#{self.loading_image_url}"
+    end
+    
+    # def initialize
+    #  
+    # end
   end
 end

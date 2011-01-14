@@ -3,4 +3,5 @@ S3Bear.config do |config|
   config.secret_access_key = 'example'
   config.bucket = 'example'
   #config.upload_image_url = 'example'
+  #config.loading_image = '/assets/layouts/user/loader.gif'
 end

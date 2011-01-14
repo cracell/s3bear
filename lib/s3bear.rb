@@ -76,6 +76,7 @@ module S3Bear
   end
  
   module InstanceMethods
+      
     def image_url_provided?
       !self.send(self.class.url_path).blank?
     end

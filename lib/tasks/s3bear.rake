@@ -27,6 +27,9 @@ namespace :s3bear do
     
     file = File.expand_path(File.join(File.dirname(__FILE__), '../', '../' 'public/assets/swfupload.swf'))
     AWS::S3::S3Object.store('assets/swfupload.swf', open(file), S3Bear.config.bucket, :access => :public_read)
+    
+    file = File.expand_path(File.join(File.dirname(__FILE__), '../', '../' 'public/assets/loader.gif'))
+    AWS::S3::S3Object.store('assets/loader.gif', open(file), S3Bear.config.bucket, :access => :public_read)
 
     # Not working. So switching to uploading straight to bucket for now
     # puts 'hi1'
