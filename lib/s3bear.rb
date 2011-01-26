@@ -86,7 +86,7 @@ module S3Bear
     end
 
     def do_download_remote_image
-      url = self.send(self.class.url_path).gsub(' ', '%20')
+      url = URI.escape(self.send(self.class.url_path))
       io = open(URI.parse(url))
       def io.original_filename; base_uri.path.split('/').last; end
       io.original_filename.blank? ? nil : io
