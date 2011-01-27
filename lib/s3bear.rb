@@ -86,7 +86,9 @@ module S3Bear
     end
 
     def do_download_remote_image
-      url = URI.escape(self.send(self.class.url_path))
+      #In case Rails already escaped the URI, we don't want to double escape so decode it first
+      url = URI.decode(self.send(self.class.url_path))
+      url = URI.escape(url)
       io = open(URI.parse(url))
       def io.original_filename; base_uri.path.split('/').last; end
       io.original_filename.blank? ? nil : io
