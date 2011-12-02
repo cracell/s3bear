@@ -10,8 +10,8 @@ namespace :s3bear do
   desc "put a standard crossdomain.xml into your bucket"
   task :make_crossdomain => :environment do
     connect_s3!
-    file = File.expand_path(File.join(File.dirname(__FILE__), 'crossdomain.xml'))
-    AWS::S3::S3Object.store('crossdomain.xml', open(file), S3Bear::Config.bucket, :access => :public_read)
+    file = File.expand_path(File.join(File.dirname(__FILE__), '../', '../' 'public/crossdomain.xml'))
+    AWS::S3::S3Object.store('crossdomain.xml', open(file), S3Bear.config.bucket, :access => :public_read)
   end
   
   desc "put a iframe upload.html into your bucket"

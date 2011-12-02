@@ -5,6 +5,12 @@ This plugin is an attempt to make a more plug and play version of http://github.
 
 Right now it's very unstable and only being tested against Ruby 1.9.2 and Rails 3.0.3.
 
+Things to Know
+
+- S3Bear is only support Rails 3 and Ruby 1.9.2
+- S3Bear is tested against IE7, IE8, Firefox 3.6, Chrome 8, Chrome 9 and Safari 5
+- S3Bear is Flash free for modern browsers but must fallback to SWFUpload for IE because it doesn't support the FileAPI. Which really is a shame :(
+
 == Getting Started
 
 S3 Bear builds upon Paperclip's functionality so get it setup first.
@@ -16,6 +22,8 @@ Run:
 
   rails generate s3bear:install
   
+
+
 Setup the initializer
   Do stuff.
 
@@ -51,6 +59,6 @@ Requires Rails 3
 
 == Copyright
 
-Copyright (c) 2010 Eric Cranston. See LICENSE.txt for
+Copyright (c) 2011 Eric Cranston. See LICENSE.txt for
 further details.
 

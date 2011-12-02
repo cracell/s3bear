@@ -18,7 +18,7 @@
      headers:{
      'x-amz-acl':'public-read',
      'Content-Type':function(file){
-       var ext = file.fileName.split(".").pop();
+       var ext = file.name.split(".").pop();
        switch(ext){
          case 'htm':
          case 'html':
@@ -47,7 +47,8 @@
        return file + "(" + (number+1) + " of " + total + ")";
      },
      url: function(number) {
-       return ($('#upload_field')[0].files[number].fileName);
+       var file = $('#upload_field')[0].files[number];
+       return ((file.name || file.fileName));
      },
      sendBoundary: false,
      setName: function(text) {
