@@ -51,11 +51,11 @@ namespace :s3bear do
   end
   
   desc "Create your bucket and uploads required files"
-  task :setup_upload_bucket => :enviroment do
-    
+  task :setup_upload_bucket => :environment do
+    Rake::Task["s3bear:make_bucket"].invoke
+    Rake::Task["s3bear:make_crossdomain"].invoke
+    Rake::Task["s3bear:make_upload"].invoke
   end
-  
-  
 
   def connect_s3!
     AWS::S3::Base.establish_connection!(

@@ -20,13 +20,17 @@ Add to your Gemfile and run bundle install
 
 Run: 
 
-  rails generate s3bear:install
+  rails generate s3_bear:install
   
 
 
 Setup the initializer
-  Do stuff.
+  Go to config/initializers/s3bear.rb 
+  Either change the access keys or setup your local system to export them
 
+Run the setup rake to setup the bucket
+  bundle exec rake s3bear:setup_upload_bucket
+  
 Add Stylesheet to your layout
   = stylesheet_link_tag 's3bear'
 
