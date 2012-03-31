@@ -9,17 +9,8 @@ module S3Bear
         copy_file 's3bear.rb', 'config/initializers/s3bear.rb'
       end
       
-      def copy_javascripts
-        copy_file 's3bear.js', 'public/javascripts/plugins/s3bear.js'
-        copy_file 'postmessage.js', 'public/javascripts/plugins/postmessage.js'
-      end
-      
       def copy_partial
         copy_file '_s3bear.html.haml', 'app/views/shared/_s3bear.html.haml'
-      end
-      
-      def copy_css
-        copy_file 's3bear.css', 'public/stylesheets/plugins/s3bear.css'
       end
     end
   end
