@@ -32,17 +32,17 @@ Run the setup rake to setup the bucket
   bundle exec rake s3bear:setup_upload_bucket
   
 Add Stylesheet to your layout
-  = stylesheet_link_tag 's3bear'
+  = stylesheet_link_tag 's3_bear/base'
 
 Add Jquery and the s3bear scripts to your layout
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
-  = javascript_include_tag 's3bear', 'postmessage'
+  = javascript_include_tag 's3_bear/s3bear', 's3_bear/postmessage'
 
 Add bearify. Make sure the tag matches the paperclip field names
   bearify :attached_image
   
 Add to your form
-  = render :partial => 'shared/s3_bear', :locals => {:f => f, :target => :attached_image_url}
+  = render :partial => 'shared/s3bear', :locals => {:f => f, :target => :attached_image_url}
 
 == Limitations
 
